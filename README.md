@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧾 TaskManagerX – Full-Stack Task Manager (Next.js + ASP.NET Core)
 
-## Getting Started
+Welcome to **TaskManagerX**, a secure full-stack task management app built with **Next.js** (React) on the frontend and **ASP.NET Core Web API** on the backend. Authenticated users can register, log in, and manage tasks via a clean, responsive interface.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🧠 Project Overview
+
+- 🔐 **JWT-based Auth**
+- 📦 **CRUD API for Tasks**
+- 🌓 **Dark mode-ready UI**
+- 🔄 **Live task updates on edit/save**
+- 🌍 **Timezone-aware due dates**
+
+---
+
+# 📁 Folder Structure
+
+```
+/task-manager-frontend    ← Next.js frontend (React, TailwindCSS)
+/task-manager-api         ← ASP.NET Core backend (C#, EF Core, PostgreSQL)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# 💻 Frontend – Next.js + TailwindCSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📂 `/task-manager-frontend`
 
-## Learn More
+### ✅ Features
+- User login + token storage
+- Protected `/tasks` route
+- Create / Edit / Delete tasks
+- Dark-mode friendly header and styling
+- API calls via Axios with token headers
 
-To learn more about Next.js, take a look at the following resources:
+### 🛠 Tech Stack
+- React (Next.js App Router)
+- TypeScript + TailwindCSS
+- Axios for API calls
+- ESLint + Prettier
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🚀 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+cd task-manager-frontend
 
-## Deploy on Vercel
+# Install dependencies
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Set environment variables
+cp .env.local.example .env.local
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Run the frontend
+npm run dev
+```
+
+### 🌐 `.env.local`
+```
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5203
+```
+
+---
+
+# ✅ How It Works
+
+1. User registers or logs in → gets a JWT
+2. JWT stored in `localStorage`
+3. All task requests include `Authorization: Bearer <token>`
+4. Tasks can be added, edited inline, or deleted
+
+---
+
+# 📸 Screenshots
+
+---
+
+# ✨ Future Improvements
+- Password reset
+- Task tagging + filtering
+- User profile / settings page
+- Improved animations with Framer Motion
+
+---
+
+# 👩‍💻 Author
+**Aleksandra** – Full-stack developer based in Switzerland 🇨🇭
+---
